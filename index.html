@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="books-container">
+       <h1>Your Books</h1> 
+    </div>
+    <form action="" style="display:none;">
+        
+        <img src="icons/remove.png" alt="cancel icon" class="cancel-form-btn">
+        <p>
+            <label for="book-name">Book Title</label>
+            <input type="text" required id="book-name" name='title'>
+        </p>
+        <p>
+            <label for="author">Author</label>
+            <input type="text" required id="author" name="author">
+        </p>
+        <p>
+            <label for="img-url">URL for book cover</label>
+            <input type="url" placeholder="e.g https://www.mybookimg.com/..." id="img-url" name="imgUrl">
+        </p>
+        <p>
+            <label for="pages">Number of pages</label>
+            <input type="tel" id="pages" name="pages">
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+    <button class="add-more-books"><img src="icons/card-plus-outline.svg" alt="Plus icon for adding more books"></button>
+    <script src="main.js"></script>
+
+</body>
+</html>

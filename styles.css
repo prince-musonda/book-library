@@ -1,0 +1,223 @@
+:root{
+    --shadow-value:1px 1px 1px 2px rgba(0, 0, 0, 0.108) 
+}
+*{
+    box-sizing: border-box;
+}
+html{
+    height:100%;
+}
+body{
+    background: url('images/background.jpg') no-repeat fixed;
+    background-size:cover;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+}
+.books-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,450px));
+    grid-auto-rows: 250px;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    color: white;
+    margin-top: 40px;
+    
+}
+.books-container h1{
+    position:absolute;
+    top: -60px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.708);
+}
+.book{
+    border-radius: 10px;
+    background: linear-gradient(90deg,#f8fafc,#f1f5f9);
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    align-items:center;/**align all items to the right side of the card(book)**/
+    justify-content: center;
+}
+
+.book-img-wrapper{
+    width:150px;
+    height:150px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    position: absolute;
+    left:-25px;
+    top:30px;
+    background: linear-gradient(90deg,#f97316,#b91c1c);
+    
+}
+.book_img{
+    object-fit: cover;
+    margin:0 auto;
+}
+.already-read{
+color:#16a34a;
+}
+.not-yet-read{
+
+}
+.book-title{
+    color: #0284c7;
+    width: 15ch;
+    text-align: center;
+    font-size:1.3rem;
+    font-weight: 550;
+    font-style: italic;
+}
+.book-author{
+    color: #171717;
+    font-weight: 550;
+    font-size: 1.1rem;
+}
+.delete-book-btn{
+    position:absolute;
+    top:5px;
+    right:10px;
+    width:50px;
+    height:50px;
+    border-radius:25px;
+    border:none;
+    box-shadow: var(--shadow-value);
+    
+}
+.delete-book-btn > img{
+    width:70%;
+}
+
+
+/**** "styling the add more" books button**/
+.add-more-books{
+    width:70px;
+    height:70px;
+    position:fixed;
+    border-radius: 50px;
+    right:30%;
+    bottom: 30px;
+    background-color: #a3a3a3;
+    border:none;
+    box-shadow: var(--shadow-value);
+
+}
+.add-more-books:hover{
+    background-color: #2563eb;
+    transform: scale(1.07);
+}
+.add-more-books:active{
+    transform: scale(0.9);
+    background-color: #4ade80;
+}
+/* styling for the modal and the form*/
+.show-modal{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(51, 65, 85,0.5);
+    z-index: 2;
+    display: flex; /*center the form*/
+    justify-content: center;
+    align-items: center;
+   
+}
+.form-styling, input, button[type='submit'],label{
+    font-family: roboto,Arial;
+}
+.form-styling{
+    display:flex !important;
+    flex-direction: column;
+    color: #0f172a;
+    background-color: white;
+    padding:30px;
+    border-radius: 15px;
+    position:relative;
+}
+.form-styling label{
+    display:inline-block;
+    width: 17ch;
+    text-align:center;
+    vertical-align: center;
+}
+
+.form-styling p{
+    padding:20px;
+    
+}
+.form-styling input{
+    width: 250px;
+    padding:10px
+}
+input:focus{
+    outline:1px solid #0284c7;
+    border: none;
+}
+.form-styling button[type='submit']{
+    width:fit-content;
+    margin:0 auto;
+    padding: 10px 20px;
+    color:white;
+    font-weight: 550;
+    font-size: 1.3rem;
+    background-color: #0284c7;
+    border:none;
+}
+
+.cancel-form-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    box-shadow: 1px 3px 1px 2px rgba(0, 0, 0, 0.108);
+    background-color:white;
+    border-radius: 25px;
+    position:absolute;
+    right:10px;
+    top:2px;
+}
+.cancel-modal{
+    display:none;
+}
+
+/** mobile responsiveness */
+@media only screen and (max-width:380px){
+    .books-container{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        margin:10px 5px;
+    }
+    .book{
+        background: linear-gradient(90deg,rgba(248, 250, 252, 0.885),rgba(241, 245, 249, 0.879));
+        align-items: flex-end;
+    }
+    .book-img-wrapper{
+        height:125px;
+        width:125px;
+        top:50px;
+
+    }
+    .book p{
+        margin-right:10px;
+    }
+    .delete-book-btn{
+        width:40px;
+        height:40px;
+    }
+    .add-more-books{
+        width:50px;
+        height:50px;
+        right:40%;
+    }
+}
+
+@media only screen and (max-width:240px){
+    .book-title{
+        font-size: 1rem;
+    }
+}
